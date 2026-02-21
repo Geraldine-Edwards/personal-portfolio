@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Editorial design rules */
+
+* {
+  border-radius: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: #111;
+  font-family: Inter, sans-serif;
+}
