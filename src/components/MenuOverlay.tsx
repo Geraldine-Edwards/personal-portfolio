@@ -13,11 +13,11 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
       <nav className="flex flex-col gap-12">
-        {["work", "about", "contact"].map((section, index) => (
+        {["work", "skills", "about", "testimonials", "contact"].map((section, index) => (
           <motion.button
             key={section}
             onClick={() => handleClick(section)}
-            className="text-6xl md:text-7xl font-serif text-left"
+            className="text-5xl  md:text-7xl font-serif text-left"
             
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
 
       <button
         onClick={onClose}
-        className="absolute top-8 right-10 text-lg md:text-xl lg:text-2xl font-serif tracking-widest"
+        className="absolute top-8 right-10 text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif tracking-widest"
       >
         CLOSE
       </button>

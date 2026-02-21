@@ -17,7 +17,7 @@ const Contact = () => {
         Contact
       </motion.h2>
 
-      {/* Optional divider */}
+      {/* Mini divider line*/}
       <div className="h-px w-24 bg-neutral-200 mx-auto mb-8" />
 
       {/* Text */}

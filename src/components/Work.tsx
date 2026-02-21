@@ -50,7 +50,7 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-20 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
+      className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto" 
     >
       {/* Section title */}
       <motion.h2
@@ -63,7 +63,7 @@ const Work = () => {
         Selected Work
       </motion.h2>
 
-      {/* Mini dividing line */}
+      {/* Mini divider line */}
       <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 md:gap-12 lg:gap-16">

@@ -17,7 +17,7 @@ const About = () => {
         About Me
       </motion.h2>
 
-      {/* Optional divider */}
+      {/* Mini divider line */}
       <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />
 
       <div className="flex flex-col lg:flex-row items-center gap-12">

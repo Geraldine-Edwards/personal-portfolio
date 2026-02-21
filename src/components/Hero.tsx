@@ -42,13 +42,23 @@ const Hero = () => {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="text-sm md:text-base text-neutral-600 mt-12"
-      >
-        Scroll ↓
-      </motion.div>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.2, duration: 1 }}
+  className="text-sm md:text-base text-neutral-600 mt-12"
+>
+  <motion.span
+    animate={{ y: [0, 8, 0] }}       // move down 8px and back
+    transition={{
+      duration: 1,                     // 1 second per bounce cycle
+      repeat: Infinity,                // keep looping
+      ease: "easeInOut",               // smooth motion
+    }}
+    className="inline-block"
+  >
+     &#x25BC;  {/* ▼ */}
+  </motion.span>
+</motion.div>
     </section>
   )
 }
