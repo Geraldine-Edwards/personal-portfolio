@@ -1,42 +1,27 @@
-type Props = {
+import { FC } from "react"
+
+type MenuOverlayProps = {
   isOpen: boolean
   onClose: () => void
+  handleClick: (section: string) => void
 }
 
-export default function MenuOverlay({ isOpen, onClose }: Props) {
+const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => {
   if (!isOpen) return null
-
-  const handleClick = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-    onClose()
-  }
 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
-      
       <nav className="flex flex-col gap-12">
-  <button
-    onClick={() => handleClick("work")}
-    className="text-6xl md:text-7xl font-serif text-left"
-  >
-    Work
-  </button>
-  <button
-    onClick={() => handleClick("about")}
-    className="text-6xl md:text-7xl font-serif text-left"
-  >
-    About
-  </button>
-  <button
-    onClick={() => handleClick("contact")}
-    className="text-6xl md:text-7xl font-serif text-left"
-  >
-    Contact
-  </button>
-</nav>
+        {["work", "about", "contact"].map((section) => (
+          <button
+            key={section}
+            onClick={() => handleClick(section)}
+            className="text-6xl md:text-7xl font-serif text-left"
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </button>
+        ))}
+      </nav>
 
       <button
         onClick={onClose}
@@ -44,7 +29,8 @@ export default function MenuOverlay({ isOpen, onClose }: Props) {
       >
         CLOSE
       </button>
-
     </div>
   )
 }
+
+export default MenuOverlay
