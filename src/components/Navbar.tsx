@@ -8,7 +8,7 @@ export default function Navbar({ onMenuClick }: Props) {
 
       <div className="max-w-[1100px] mx-auto px-6 py-6 flex justify-between items-center">
 
-        <div className="font-serif text-xl md:text-2xl lg:text-5xl tracking-tight">
+        <div className="font-serif text-2xl md:text-3xl lg:text-5xl tracking-tight">
           Geraldine Edwards
         </div>
 

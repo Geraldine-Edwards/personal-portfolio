@@ -15,7 +15,7 @@ export default function MenuOverlay({ isOpen, onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10">
+    <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
       
       <nav className="flex flex-col gap-12">
   <button
