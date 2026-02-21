@@ -1,47 +1,35 @@
-import { useState } from "react";
-import Navbar from "./components/Navbar";
-import MenuOverlay from "./components/MenuOverlay";
+import { useState } from "react"
+import Navbar from "./components/Navbar"
+import MenuOverlay from "./components/MenuOverlay"
 import Hero from "./components/Hero"
-
+import Work from "./components/Work"
+import About from "./components/About"
+import Contact from "./components/Contact"
 
 function App() {
-
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const handleClick = (section: string) => {
+    const el = document.getElementById(section)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+    }
+    setMenuOpen(false)
+  }
+
   return (
-    <div>
-
+    <div className="font-sans">
       <Navbar onMenuClick={() => setMenuOpen(true)} />
-
       <MenuOverlay
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
+        handleClick={handleClick}
       />
 
       <Hero />
-      {/* Test sections */}
-
-      <section
-        id="work"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <h2 className="text-4xl font-serif">Work</h2>
-      </section>
-
-      <section
-        id="about"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <h2 className="text-4xl font-serif">About</h2>
-      </section>
-
-      <section
-        id="contact"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <h2 className="text-4xl font-serif">Contact</h2>
-      </section>
-
+      <Work />
+      <About />
+      <Contact />
     </div>
   )
 }
