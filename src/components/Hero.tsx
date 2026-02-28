@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] mb-6"
         >
-          This is my Portfolio
+          Welcome to my Portfolio
         </motion.h1>
 
         <motion.p

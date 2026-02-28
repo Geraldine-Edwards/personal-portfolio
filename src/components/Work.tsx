@@ -6,43 +6,38 @@ type Project = {
   image: string
   github?: string
   live?: string
+  featured?: boolean
 }
 
 const projects: Project[] = [
   {
-    title: "Project One",
-    description: "A calm and thoughtful interface built with React.",
-    image: "/chatterbox.png",
-    github: "https://github.com/geraldine/project-one",
-    live: "https://project-one.example.com",
+    title: "Boost.dev",
+    description: "A developer dashboard with confidence-building mini challenges.",
+    image: "/boost-dev.png",
+    github: "https://github.com/Geraldine-Edwards/boost.dev",
+    live: "https://ge-boost-dev.hosting.codeyourfuture.io/",
+    featured: true,
   },
   {
-    title: "Project Two",
-    description: "A minimalist web app with precise typography.",
-    image: "/chatterbox.png",
-    github: "https://github.com/geraldine/project-two",
-    live: "https://project-two.example.com",
+    title: "Gift Pal",
+    description: "A gift wishlist app with event planning and friends integration.",
+    image: "/giftpal.png",
+    github: "https://github.com/Geraldine-Edwards/Gift-Pal",
+    live: "https://gift-pal-91413d2174b0.herokuapp.com/",
   },
   {
-    title: "Project Three",
-    description: "Clean design emphasizing whitespace and clarity.",
-    image: "/chatterbox.png",
-    github: "https://github.com/geraldine/project-three",
-    live: "https://project-three.example.com",
+    title: "Bright Futures",
+    description: "A mock website supporting parents and educators in fostering empathy, inclusion, and belonging for young people.",
+    image: "/bright-futures.png",
+    github: "https://github.com/Geraldine-Edwards/Bright-Futures-2",
+    live: "https://geraldine-edwards.github.io/Bright-Futures-2/",
   },
-   {
+  {
     title: "Project Four",
     description: "Clean design emphasizing whitespace and clarity.",
     image: "/chatterbox.png",
-    github: "https://github.com/geraldine/project-three",
+    github: "https://github.com/geraldine/project-four",
     live: "https://project-four.example.com",
-  },
-   {
-    title: "Project Five",
-    description: "Clean design emphasizing whitespace and clarity.",
-    image: "/chatterbox.png",
-    github: "https://github.com/geraldine/project-three",
-    live: "https://project-five.example.com",
   },
 ]
 
@@ -50,7 +45,7 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto" 
+      className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1600px] mx-auto"
     >
       {/* Section title */}
       <motion.h2
@@ -63,64 +58,75 @@ const Work = () => {
         Selected Work
       </motion.h2>
 
-      {/* Mini divider line */}
       <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 md:gap-12 lg:gap-16">
-        {projects.map((project, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.05 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-4"
-          >
-            {/* Image container with group-hover overlay */}
-            <div className="overflow-hidden cursor-pointer group relative">
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                className="w-full aspect-[4/5] object-cover transition-transform duration-600 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition-opacity duration-400 pointer-events-none" />
-            </div>
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-12">
+        {projects.map((project, i) => {
+          const isFeatured = project.featured
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className={`flex flex-col gap-4 ${
+                isFeatured ? "md:col-span-2 xl:col-span-2" : ""
+              }`}
+            >
+              {/* Image container with hover overlay */}
+              <div className="relative overflow-hidden cursor-pointer group bg-white aspect-[4/3]">
+                <motion.img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
 
-            {/* Project title */}
-            <h3 className="text-xl md:text-2xl font-serif leading-tight">
-              {project.title}
-            </h3>
+                {/* Dark overlay */}
+                <motion.div
+                  className="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition-opacity duration-400 pointer-events-none"
+                />
 
-            {/* Project description */}
-            <p className="text-neutral-600 font-sans text-sm md:text-base">
-              {project.description}
-            </p>
+                {/* Title + links on hover */}
+                <div className="absolute bottom-0 left-0 w-full p-4 bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="flex gap-4 mt-2">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Link opens in a new tab"
+                        className="underline text-neutral-900 hover:opacity-80"
+                      >
+                        Live
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Link opens in a new tab"
+                        className="underline text-neutral-900 hover:opacity-80"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
 
-            {/* Project links */}
-            <div className="flex gap-4 mt-2">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm underline underline-offset-4 hover:opacity-60 transition-opacity"
-                >
-                  GitHub
-                </a>
-              )}
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm underline underline-offset-4 hover:opacity-60 transition-opacity"
-                >
-                  Live
-                </a>
-              )}
-            </div>
-          </motion.div>
-        ))}
+              {/* Non-hover titles for editorial consistency */}
+              <h3 className="text-xl md:text-2xl font-serif leading-tight">
+                {project.title}
+              </h3>
+              <p className="text-neutral-600 font-sans text-sm md:text-base">
+                {project.description}
+              </p>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )
