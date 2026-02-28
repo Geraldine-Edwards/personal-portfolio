@@ -39,6 +39,13 @@ const projects: Project[] = [
     github: "https://github.com/geraldine/project-four",
     live: "https://project-four.example.com",
   },
+  {
+    title: "Project Five",
+    description: "Clean design emphasizing whitespace and clarity.",
+    image: "/chatterbox.png",
+    github: "https://github.com/geraldine/project-four",
+    live: "https://project-four.example.com",
+  },
 ]
 
 const Work = () => {
@@ -53,12 +60,12 @@ const Work = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-serif mb-16 text-center"
+        className="text-4xl md:text-5xl font-serif mb-16 text-left"
       >
         Selected Work
       </motion.h2>
 
-      <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />
+      <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-12">
@@ -76,11 +83,11 @@ const Work = () => {
               }`}
             >
               {/* Image container with hover overlay */}
-              <div className="relative overflow-hidden cursor-pointer group bg-white aspect-[4/3]">
+              <div className="relative overflow-hidden cursor-pointer group bg-white aspect-[5/3]">
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 contrast-95 saturate-75 brightness-95 sepia-[0.08]"
                 />
 
                 {/* Dark overlay */}
@@ -96,7 +103,7 @@ const Work = () => {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Link opens in a new tab"
+                        aria-label={`Link opens ${project.title} in a new tab`}
                         className="underline text-neutral-900 hover:opacity-80"
                       >
                         Live
@@ -107,7 +114,7 @@ const Work = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Link opens in a new tab"
+                        aria-label={`Link opens ${project.title} Github repository in a new tab`}
                         className="underline text-neutral-900 hover:opacity-80"
                       >
                         GitHub

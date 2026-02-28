@@ -30,9 +30,9 @@ function App() {
 
       <main>
       <Hero />
+      <About />
       <Work />
       <Skills />
-      <About />
       <Testimonials />
       <Contact />
       </main>

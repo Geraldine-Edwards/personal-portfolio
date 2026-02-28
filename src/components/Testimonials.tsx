@@ -1,29 +1,27 @@
 import { motion } from "framer-motion"
 
 const testimonials = [
-  `"Working with Geraldine was a delight — she brings clarity and elegance to every project."`,
-  `"Geraldine’s attention to detail is exceptional. Her work is calm, thoughtful, and precise."`,
-  `"A true professional with a minimalist approach that elevates every digital experience."`,
+  `"Working with Geraldine was a delight — she brings clarity and elegance to every project. - John Smith"`,
+  `"Geraldine’s attention to detail is exceptional. Her work is calm, thoughtful, and precise. - David Jones"`,
+  `"A true professional with a minimalist approach that elevates every digital experience. - Julia Roberts"`,
 ]
 
 const Testimonials = () => (
   <section
-    id="testimonials" 
-    className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
+    id="testimonials"
+    className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto bg-[#daddc9]"
   >
-    {/* Section title */}
     <motion.h2
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-serif mb-12 text-center text-neutral-900"
+      className="text-4xl md:text-5xl font-serif mb-12 text-left text-neutral-900"
     >
       What People Say
     </motion.h2>
 
-    {/* Mini divider line */}
-    <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />
+    <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
     <div className="flex flex-col gap-12 max-w-3xl mx-auto">
       {testimonials.map((quote, i) => (

@@ -1,44 +1,56 @@
 import { motion } from "framer-motion"
 
 const About = () => (
- <section 
- id="about"
- className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
- >
-    {/* Section title */}
-    <motion.h2
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-serif mb-12 text-center text-neutral-900"
-    >
-      About Me
-    </motion.h2>
-
-    {/* Mini divider line */}
-    <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />
-
-    {/* Central image and text */}
-    <div className="flex flex-col items-center gap-8">
-  <motion.img
-    src="/me.jpeg"
-    alt="Geraldine Edwards"
-    className="w-80 h-auto object-cover shadow-lg mb-4 mx-auto"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-  />
-  <motion.p
-    className="font-sans text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl m:max-w-3xl lg:max-w-5xl xl-max-w-8xl text-center"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: 0.2 }}
-    viewport={{ once: true }}
+  <section
+    id="about"
+    className="w-full bg-[#e0d1ce]"
   >
-        I am a junior software developer with a people-focused past and a creative streak that shows up in everything I do, from code to crafts. I'm a lifelong learner at heart always picking up new skills, new tools and new perspectives. Retail, admin and support work taught me how to listen, stay calm and make things easier for the people around me and now I'm bringing the same energy onto tech.
-      </motion.p>
+    <div className="py-32 px-6 md:px-12 max-w-6xl mx-auto"> 
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
+      >
+        About
+      </motion.h2>
+
+      <div className="grid md:grid-cols-2 gap-16 items-start">
+        {/* Image */}
+        <motion.img
+          src="/me1.jpeg"
+          alt="Geraldine Edwards"
+          className="w-full max-w-sm object-cover shadow-md contrast-95 saturate-75 brightness-95 sepia-[0.08]"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        />
+
+        {/* Text */}
+        <div className="space-y-8">
+          <motion.p
+            className="font-sans text-base md:text-lg text-neutral-700 leading-relaxed"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            I am a full-stack developer with a people-focused past and a creative streak that shapes everything I build.
+          </motion.p>
+
+          <motion.p
+            className="font-sans text-base md:text-lg text-neutral-700 leading-relaxed"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Retail, admin and support work taught me how to listen, stay calm and design solutions that make life easier — and I now bring that same clarity and care into software development.
+          </motion.p>
+        </div>
+      </div>
     </div>
   </section>
 )

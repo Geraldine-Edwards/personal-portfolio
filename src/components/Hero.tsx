@@ -11,11 +11,7 @@ const Hero = () => {
         animate="visible"
         variants={{
           hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.2
-            }
-          }
+          visible: { transition: { staggerChildren: 0.2 } }
         }}
       >
         <motion.h1
@@ -26,39 +22,39 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] mb-6"
         >
-          Welcome to my Portfolio
+          Full-Stack Developer Crafting Thoughtful Experiences
         </motion.h1>
 
         <motion.p
           variants={{
-            hidden: { opacity: 0, y: 40 },
+            hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 }
           }}
           transition={{ duration: 0.8 }}
           className="font-sans text-lg md:text-xl lg:text-2xl xl:text-3xl text-neutral-600 mb-12 max-w-[700px] mx-auto"
         >
-          I build calm, thoughtful digital experiences — combining precision, clarity, and a minimalist aesthetic.
+          Combining clarity, creativity, and empathy to deliver software that works beautifully for people.
         </motion.p>
       </motion.div>
 
       <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 1.2, duration: 1 }}
-  className="text-sm md:text-base text-neutral-600 mt-12"
->
-  <motion.span
-    animate={{ y: [0, 8, 0] }}       // move down 8px and back
-    transition={{
-      duration: 1,                     // 1 second per bounce cycle
-      repeat: Infinity,                // keep looping
-      ease: "easeInOut",               // smooth motion
-    }}
-    className="inline-block"
-  >
-     &#x25BC;  {/* ▼ */}
-  </motion.span>
-</motion.div>
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="text-sm md:text-base text-neutral-600 mt-12"
+      >
+        <motion.span
+          animate={{ y: [0, 8, 0] }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="inline-block"
+        >
+          &#x25BC;
+        </motion.span>
+      </motion.div>
     </section>
   )
 }

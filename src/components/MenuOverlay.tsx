@@ -13,7 +13,7 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
       <nav className="flex flex-col gap-12">
-        {["work", "skills", "about", "testimonials", "contact"].map((section, index) => (
+        {["work", "about", "skills", "testimonials", "contact"].map((section, index) => (
           <motion.button
             key={section}
             onClick={() => handleClick(section)}
