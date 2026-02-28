@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 const About = () => (
   <section
     id="about"
-    className="w-full bg-[#e0d1ce]"
+    className="w-full bg-[#daddc9]"
   >
     <div className="py-32 px-6 md:px-12 max-w-6xl mx-auto"> 
       <motion.h2
@@ -37,17 +37,25 @@ const About = () => (
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            I am a full-stack developer with a people-focused past and a creative streak that shapes everything I build.
+            I am a full-stack developer with a people-focused past and a creative streak that shapes everything I build. I focus on writing clean, maintainable code that balances functionality with elegance, aiming to create intuitive, accessible, and performant experiences. I enjoy translating complex problems into simple, effective solutions and thrive in collaborative environments, bringing clarity and care to every project.
           </motion.p>
-
           <motion.p
             className="font-sans text-base md:text-lg text-neutral-700 leading-relaxed"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            What I value in a team: kindness, real challenges, and a supportive environment where learning is encouraged and mistakes are treated as part of growth, not something to fear.
+          </motion.p>
+          <motion.p
+            className="font-sans text-base md:text-lg text-800 leading-relaxed"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Retail, admin and support work taught me how to listen, stay calm and design solutions that make life easier — and I now bring that same clarity and care into software development.
+          If that sounds like your world, I’d love to be part of it.
           </motion.p>
         </div>
       </div>

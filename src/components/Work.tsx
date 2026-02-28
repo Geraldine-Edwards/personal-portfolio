@@ -12,11 +12,18 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Boost.dev",
-    description: "A developer dashboard with confidence-building mini challenges.",
+    description: "Built during a team hackathon, Boost.dev is a developer dashboard with confidence-building mini challenges, motivating resources and an encouraging community.",
     image: "/boost-dev.png",
     github: "https://github.com/Geraldine-Edwards/boost.dev",
     live: "https://ge-boost-dev.hosting.codeyourfuture.io/",
     featured: true,
+  },
+  {
+    title: "REELtalk",
+    description: "A movie-centric platform that combines discovering new films with the  experience of a community forum.",
+    image: "/reeltalk.png",
+    github: "https://github.com/Geraldine-Edwards/REELtalk",
+    live: "https://reel-talk-app-9059e75acb3d.herokuapp.com/",
   },
   {
     title: "Gift Pal",
@@ -31,13 +38,6 @@ const projects: Project[] = [
     image: "/bright-futures.png",
     github: "https://github.com/Geraldine-Edwards/Bright-Futures-2",
     live: "https://geraldine-edwards.github.io/Bright-Futures-2/",
-  },
-  {
-    title: "Project Four",
-    description: "Clean design emphasizing whitespace and clarity.",
-    image: "/chatterbox.png",
-    github: "https://github.com/geraldine/project-four",
-    live: "https://project-four.example.com",
   },
   {
     title: "Project Five",

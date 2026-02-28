@@ -30,7 +30,7 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
             {section.charAt(0).toUpperCase() + section.slice(1)}
 
             {/* Sage underline */}
-            <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-[#daddc9] transition-all duration-300 group-hover:w-full" />
+            <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-[#e0d1ce] transition-all duration-300 group-hover:w-full" />
           </motion.button>
         ))}
       </nav>

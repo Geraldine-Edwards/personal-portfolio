@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 const skills = [
   {
     category: "Front-end / UI",
-    items: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript (beginner)", "React", "Framer Motion", "Responsive Design"]
+    items: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript (beginner)", "React", "Responsive Design"]
   },
   {
     category: "Back-end & Databases",

@@ -9,7 +9,7 @@ const testimonials = [
 const Testimonials = () => (
   <section
     id="testimonials"
-    className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto bg-[#daddc9]"
+    className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto bg-[#e0d1ce]"
   >
     <motion.h2
       initial={{ opacity: 0, y: 30 }}

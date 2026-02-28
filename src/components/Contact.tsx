@@ -33,17 +33,18 @@ const Contact = () => (
   viewport={{ once: true }}
 >
   <a
-    href="/files/geraldine-edwards-cv.pdf"
+    href="https://docs.google.com/document/d/1GX043skAHR6UFFdXoNJUrFgf0gOA3lSfKMrqYxfKRu8/edit?usp=sharing"
     download
-    className="px-6 py-3 bg-[#e8e1d5] text-neutral-900 font-sans rounded-md hover:opacity-80 transition-opacity"
+    className="px-6 py-3 bg-[#daddc9] text-neutral-900 font-sans rounded-md hover:opacity-80 transition-opacity"
     aria-label="Download CV"
   >
     Download my CV
   </a>
 
   <a
-    href="mailto:geraldine@example.com"
+    href="mailto:geraldine.edwards25@gmail.com"
     className="px-6 py-3 border border-neutral-900 rounded-md font-sans hover:bg-neutral-100 transition-colors"
+    aria-label="Email for further information"  
   >
     Send me an email
   </a>
