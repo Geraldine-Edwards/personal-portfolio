@@ -11,9 +11,16 @@ const Testimonials = () => (
     id="testimonials" 
     className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
   >
-    <h2 className="text-4xl md:text-5xl font-serif mb-16 text-center">
+    {/* Section title */}
+    <motion.h2
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-4xl md:text-5xl font-serif mb-12 text-center text-neutral-900"
+    >
       What People Say
-    </h2>
+    </motion.h2>
 
     {/* Mini divider line */}
     <div className="h-px w-24 bg-neutral-200 mx-auto mb-12" />

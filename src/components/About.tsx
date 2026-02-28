@@ -1,7 +1,10 @@
 import { motion } from "framer-motion"
 
 const About = () => (
- <section className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto">
+ <section 
+ id="about"
+ className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
+ >
     {/* Section title */}
     <motion.h2
       initial={{ opacity: 0, y: 30 }}
@@ -18,23 +21,23 @@ const About = () => (
 
     {/* Central image and text */}
     <div className="flex flex-col items-center gap-8">
-      <motion.img
-        src="/me.jpeg"
-        alt="Geraldine Edwards"
-        className="w-80 h-auto object-cover shadow-lg mb-4"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      />
-      <motion.p
-        className="font-sans text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl text-center"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        I am a freelance full-stack developer creating calm, minimalist, and elegant digital experiences. I combine thoughtful design, precision, and clarity to craft interfaces that feel intentional and timeless.
+  <motion.img
+    src="/me.jpeg"
+    alt="Geraldine Edwards"
+    className="w-80 h-auto object-cover shadow-lg mb-4 mx-auto"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  />
+  <motion.p
+    className="font-sans text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl m:max-w-3xl lg:max-w-5xl xl-max-w-8xl text-center"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+    viewport={{ once: true }}
+  >
+        I am a junior software developer with a people-focused past and a creative streak that shows up in everything I do, from code to crafts. I'm a lifelong learner at heart always picking up new skills, new tools and new perspectives. Retail, admin and support work taught me how to listen, stay calm and make things easier for the people around me and now I'm bringing the same energy onto tech.
       </motion.p>
     </div>
   </section>
