@@ -3,9 +3,9 @@ import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
   {/* insert the quotes text */}
 const testimonials = [
-  `a`, 
-  `b`,
-  `c`,
+  `"Geraldine is dedicated, reliable, and always delivers high-quality work."`,
+  `"A pleasure to collaborate with—Geraldine brings creativity and enthusiasm to every project."`,
+  `"Her professionalism and attention to detail make her stand out in any team."`
 ]
 
 const Testimonials = () => (
