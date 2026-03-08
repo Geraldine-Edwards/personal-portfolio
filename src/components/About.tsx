@@ -5,13 +5,13 @@ const About = () => (
     id="about"
     className="w-full bg-[#daddc9]"
   >
-    <div className="py-32 px-6 md:px-12 max-w-6xl mx-auto"> 
+    <div className="py-28 md:py-32 px-6 md:px-12 max-w-6xl mx-auto"> 
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
+        className="text-4xl md:text-5xl font-serif mb-16 text-left"
       >
         About
       </motion.h2>

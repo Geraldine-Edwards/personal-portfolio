@@ -1,5 +1,6 @@
-import { FC } from "react"
+import type { FC } from "react"
 import { motion } from "framer-motion"
+import {FiX } from 'react-icons/fi'
 
 type MenuOverlayProps = {
   isOpen: boolean
@@ -12,8 +13,16 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
+      <button
+        onClick={onClose}
+        className="flex items-center gap-2 absolute top-8 right-10 text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif tracking-widest"
+      >
+        <span>CLOSE</span>
+        <FiX size={24} />
+      </button>
+
       <nav className="flex flex-col gap-12">
-        {["about", "work", "skills", "testimonials", "contact"].map((section, index) => (
+        {["about", "work", "skills", "testimonials", "contact"].map((section) => (
           <motion.button
             key={section}
             onClick={() => handleClick(section)}
@@ -27,20 +36,16 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
             whileHover={{ x: 12 }}
             whileTap={{ x: 6 }}
           >
+            {/* Capitalise the section name */}
             {section.charAt(0).toUpperCase() + section.slice(1)}
 
-            {/* Sage underline */}
-            <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-[#e0d1ce] transition-all duration-300 group-hover:w-full" />
+            {/* Underline */}
+            <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-[#e0d1ce] transition-all duration-300 group-hover:w-full group-focus:w-full" />
           </motion.button>
         ))}
       </nav>
 
-      <button
-        onClick={onClose}
-        className="absolute top-8 right-10 text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif tracking-widest"
-      >
-        CLOSE
-      </button>
+      
     </div>
   )
 }

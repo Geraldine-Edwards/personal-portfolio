@@ -11,7 +11,7 @@ const skills = [
   },
   {
     category: "Integration & APIs",
-    items: ["RESTful APIs", "Third-party integrations (Gemini API)"]
+    items: ["RESTful APIs", "Third-party integrations"]
   },
   {
     category: "Testing & Development",
@@ -38,7 +38,7 @@ const skills = [
 const Skills = () => (
   <section
     id="skills"
-    className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
+    className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto bg-[#e0d1ce]"
   >
     <motion.h2
       initial={{ opacity: 0, y: 30 }}
@@ -56,10 +56,10 @@ const Skills = () => (
       {skills.map((skill, i) => (
         <motion.div
           key={i}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: i * 0.05 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: i * 0.04 }}
+          viewport={{ once: true , amount: 0.4 }}
           className="flex flex-col gap-4"
         >
           <h3 className="text-2xl md:text-3xl font-serif">{skill.category}</h3>

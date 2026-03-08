@@ -1,4 +1,6 @@
-import { FC, useState, useEffect } from "react"
+import type { FC } from "react"
+import { useState, useEffect } from "react"
+import { FiMenu } from 'react-icons/fi'
 
 type NavbarProps = {
   onMenuClick: () => void
@@ -35,9 +37,10 @@ const Navbar: FC<NavbarProps> = ({ onMenuClick }) => {
         {/* Menu stays fixed */}
         <button
           onClick={onMenuClick}
-          className="font-serif text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-widest"
+          className=" flex items-center gap-2 font-serif text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-widest"
         >
-          MENU
+          <span>MENU</span>
+          <FiMenu size={24} />
         </button>
       </div>
     </header>
