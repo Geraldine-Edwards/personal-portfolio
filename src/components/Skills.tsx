@@ -3,7 +3,8 @@ import { motion } from "framer-motion"
 const skills = [
   {
     category: "Front-end / UI",
-    items: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript (beginner)", "React", "Responsive Design"]
+    items: [
+      "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript (beginner)", "React", "Responsive Design"]
   },
   {
     category: "Back-end & Databases",
@@ -32,6 +33,10 @@ const skills = [
   {
     category: "Collaboration",
     items: ["Agile teamwork", "Collaborative project development"]
+  },
+  {
+    category: "Soft Skills",
+    items: [  "Empathy", "Clear communication", "Teamwork", "Adaptability", "Problem-solving", "Attention to detail", "Time management"    ]
   }
 ]
 
