@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-12 text-center"
+      className="min-h-screen flex flex-col justify-center max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-12 text-center pt-24"
     >
       <motion.div
         initial="hidden"
