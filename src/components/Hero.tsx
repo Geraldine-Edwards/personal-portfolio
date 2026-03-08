@@ -44,6 +44,7 @@ const Hero = () => {
         className="text-sm md:text-base text-neutral-600 mt-12"
       >
         <motion.span
+          aria-hidden="true"
           animate={{ y: [0, 8, 0] }}
           transition={{
             duration: 1,
@@ -54,6 +55,7 @@ const Hero = () => {
         >
           &#x25BC;
         </motion.span>
+        <span className="sr-only">Scroll down</span>
       </motion.div>
     </section>
   )

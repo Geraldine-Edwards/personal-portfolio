@@ -26,23 +26,23 @@ const Testimonials = () => (
     <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
     
     <div className="max-w-3xl mx-auto flex flex-col items-start">
-  <FaQuoteLeft size={48} className="mb-4 text-neutral-600" />
-  <div className="flex flex-col text-center gap-12 w-full">
-    {testimonials.map((quote, i) => (
-      <motion.p
-        key={i}
-        className="font-sans italic text-xl md:text-2xl text-neutral-700"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: i * 0.1 }}
-        viewport={{ once: true }}
-      >
-        {quote}
-      </motion.p>
-    ))}
+      <FaQuoteLeft size={48} className="mb-4 text-neutral-600" aria-hidden="true" />
+      <div className="flex flex-col text-center gap-12 w-full">
+        {testimonials.map((quote, i) => (
+          <motion.p
+            key={i}
+            className="font-sans italic text-xl md:text-2xl text-neutral-700"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            viewport={{ once: true }}
+          >
+            {quote}
+          </motion.p>
+        ))}
+      </div>
+      <FaQuoteRight size={48} className="mt-4 self-end text-neutral-600" aria-hidden="true" />
   </div>
-  <FaQuoteRight size={48} className="mt-4 self-end text-neutral-600" />
-</div>
   </section>
 )
 

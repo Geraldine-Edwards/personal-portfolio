@@ -67,68 +67,64 @@ const Work = () => {
       <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-12">
-        {projects.map((project, i) => {
-          return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
-              viewport={{ once: true }}
-              className="flex flex-col gap-4"
-            >
-             
-              <div className="relative overflow-hidden bg-white aspect-[5/3] group">
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 contrast-95 saturate-75 brightness-95 sepia-[0.08]"
-                />
-
-                {/* Dark overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition-opacity duration-400 pointer-events-none"
-                />
-
-                {/* Links panel: always visible */}
-                <div className="absolute bottom-0 left-0 w-full p-4 bg-white/80 backdrop-blur-sm">
-                  <div className="flex gap-4 mt-2">
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Link opens ${project.title} in a new tab`}
-                        className="underline text-neutral-900 hover:opacity-80"
-                      >
-                        Live
-                      </a>
-                    )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Link opens ${project.title} Github repository in a new tab`}
-                        className="underline text-neutral-900 hover:opacity-80"
-                      >
-                        GitHub
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-16">
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.05 }}
+            viewport={{ once: true }}
+            className="flex flex-col h-full"
+          >
+            <div className="flex-1 flex flex-col gap-4">
               <h3 className="text-xl md:text-2xl font-serif leading-tight">
                 {project.title}
               </h3>
               <p className="text-neutral-600 font-sans text-sm md:text-base">
                 {project.description}
               </p>
-            </motion.div>
-          )
-        })}
+            </div>
+            <div className="relative overflow-hidden bg-white aspect-[5/3] group mt-4">
+              <motion.img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 contrast-95 saturate-75 brightness-95 sepia-[0.08]"
+              />
+              {/* Dark overlay */}
+              <motion.div
+                className="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition-opacity duration-400 pointer-events-none"
+              />
+              {/* Links panel: always visible */}
+              <div className="absolute bottom-0 left-0 w-full p-4 bg-white/80 backdrop-blur-sm">
+                <div className="flex gap-4 mt-2">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Link opens ${project.title} in a new tab`}
+                      className="underline text-neutral-900 hover:opacity-80"
+                    >
+                      Live
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Link opens ${project.title} Github repository in a new tab`}
+                      className="underline text-neutral-900 hover:opacity-80"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   )
