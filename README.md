@@ -1,6 +1,6 @@
 # My Portfolio
 
-# [Live Site](https://geraldine-edwards-portfilio.netlify.app)
+# [Live Site](https://geraldine-edwards-portfolio.netlify.app)
 <br>
 
 A personal portfolio website built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/).  
