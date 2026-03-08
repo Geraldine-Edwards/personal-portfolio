@@ -27,7 +27,7 @@ const Contact = () => {
           className="font-sans text-lg md:text-xl text-neutral-700 leading-relaxed mb-14 max-w-prose"
         >
           If you're building something meaningful, I’d love to hear about it.
-          Whether it’s a collaboration, a project, or simply a conversation — let's chat.
+          Whether it’s a collaboration, a project, or you're just exploring ideas — let's chat.
         </motion.p>
 
         {/* Form */}

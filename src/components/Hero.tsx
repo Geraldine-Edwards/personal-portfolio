@@ -22,7 +22,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] mb-6"
         >
-          Full-Stack Developer Crafting Thoughtful Experiences
+          Full-Stack Developer Creating Clean, Accessible, and User-First Web Experiences
         </motion.h1>
 
         <motion.p

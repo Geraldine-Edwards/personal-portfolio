@@ -24,19 +24,19 @@ const projects: Project[] = [
     github: "https://github.com/Geraldine-Edwards/REELtalk",
     live: "https://reel-talk-app-9059e75acb3d.herokuapp.com/",
   },
-  {
-    title: "Gift Pal",
-    description: "A gift wishlist app with event planning and friends integration.",
-    image: "/giftpal.png",
-    github: "https://github.com/Geraldine-Edwards/Gift-Pal",
-    live: "https://gift-pal-91413d2174b0.herokuapp.com/",
-  },
    {
     title: "Chatterbox",
     description: "A minimal proof-of-concept, real-time chat application enabling instant messaging between users, featuring both long-polling and websocket technology for seamless communication.",
     image: "/chatterbox.png",
     github: "https://github.com/Geraldine-Edwards/Chat-Application",
     live: "https://geraldine-edwards-chat-app-websockets-frontend.hosting.codeyourfuture.io/",
+  },
+  {
+    title: "Gift Pal",
+    description: "A gift wishlist app with event planning and friends integration.",
+    image: "/giftpal.png",
+    github: "https://github.com/Geraldine-Edwards/Gift-Pal",
+    live: "https://gift-pal-91413d2174b0.herokuapp.com/",
   },
   {
     title: "Bright Futures",
