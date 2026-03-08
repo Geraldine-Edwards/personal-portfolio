@@ -37,8 +37,7 @@ const About = () => (
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            I am a full-stack developer with a people-focused past and a creative streak that shapes everything I build. I focus on writing clean, maintainable code that balances functionality with elegance, aiming to create intuitive, accessible, and performant experiences. I enjoy translating complex problems into simple, effective solutions and thrive in collaborative environments, bringing clarity and care to every project.
-          </motion.p>
+           I’m a full-stack developer who loves building things that are clear, useful, and easy to use. I care about writing clean code and making sure my work is accessible and performs well. I enjoy solving problems and working with others to create thoughtful solutions</motion.p>
           <motion.p
             className="font-sans text-base md:text-lg text-neutral-700 leading-relaxed"
             initial={{ opacity: 0, y: 40 }}
