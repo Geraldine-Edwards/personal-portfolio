@@ -17,7 +17,7 @@ const About = () => (
       </motion.h2>
 
       <div className="grid md:grid-cols-2 gap-16 items-start">
-        {/* Image */}
+
         <motion.img
           src="/ge.jpeg"
           alt="Geraldine Edwards"
@@ -28,7 +28,6 @@ const About = () => (
           viewport={{ once: true }}
         />
 
-        {/* Text */}
         <div className="space-y-8">
           <motion.p
             className="font-sans text-base md:text-lg text-neutral-700 leading-relaxed"
@@ -47,6 +46,7 @@ const About = () => (
           >
             What I value in a team: kindness, real challenges, and a supportive environment where learning is encouraged and mistakes are treated as part of growth, not something to fear.
           </motion.p>
+          
           <motion.p
             className="font-sans text-base md:text-lg text-800 leading-relaxed"
             initial={{ opacity: 0, y: 40 }}

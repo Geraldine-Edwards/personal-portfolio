@@ -55,6 +55,7 @@ const Hero = () => {
         >
           &#x25BC;
         </motion.span>
+
         <span className="sr-only">Scroll down</span>
       </motion.div>
     </section>

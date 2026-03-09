@@ -18,14 +18,16 @@ const Navbar: FC<NavbarProps> = ({ onMenuClick }) => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // maximum upward translation in px
+  // Maximum upward translation in px
   const maxTranslate = 80
-  // calculate translation proportional to scroll (clamp to maxTranslate)
+
+  // Calculate translation proportional to scroll (clamp to maxTranslate)
   const translateY = Math.min(scrollY, maxTranslate)
 
   return (
     <header className="fixed top-0 left-0 w-full z-40 bg-white">
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-12 py-6 flex justify-between items-center">
+        
         {/* Logo / Name moves up as user scrolls */}
         <div
           className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight transition-transform duration-100"
@@ -42,6 +44,7 @@ const Navbar: FC<NavbarProps> = ({ onMenuClick }) => {
           <span>MENU</span>
           <FiMenu size={24} />
         </button>
+        
       </div>
     </header>
   )

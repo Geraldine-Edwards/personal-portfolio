@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
-  {/* insert the quotes text */}
+  {/* insert some quotes text */}
 const testimonials = [
   `"Geraldine is dedicated, reliable, and always delivers high-quality work."`,
   `"A pleasure to collaborate with—Geraldine brings creativity and enthusiasm to every project."`,
@@ -27,6 +27,7 @@ const Testimonials = () => (
     
     <div className="max-w-3xl mx-auto flex flex-col items-start">
       <FaQuoteLeft size={48} className="mb-4 text-neutral-600" aria-hidden="true" />
+
       <div className="flex flex-col text-center gap-12 w-full">
         {testimonials.map((quote, i) => (
           <motion.p
@@ -41,6 +42,7 @@ const Testimonials = () => (
           </motion.p>
         ))}
       </div>
+
       <FaQuoteRight size={48} className="mt-4 self-end text-neutral-600" aria-hidden="true" />
   </div>
   </section>

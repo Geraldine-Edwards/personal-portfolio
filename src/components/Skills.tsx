@@ -58,6 +58,7 @@ const Skills = () => (
     <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+      
       {skills.map((skill, i) => (
         <motion.div
           key={i}
@@ -77,6 +78,7 @@ const Skills = () => (
           </ul>
         </motion.div>
       ))}
+      
     </div>
   </section>
 )

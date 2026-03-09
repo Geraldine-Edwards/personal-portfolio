@@ -53,7 +53,7 @@ const Work = () => {
       id="work"
       className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1600px] mx-auto"
     >
-      {/* Section title */}
+
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ const Work = () => {
 
       <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
-      {/* Grid */}
+      {/* Grid div for projects (but flex for project cards)*/}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-16">
         {projects.map((project, i) => (
           <motion.div
@@ -81,10 +81,12 @@ const Work = () => {
               <h3 className="text-xl md:text-2xl font-serif leading-tight">
                 {project.title}
               </h3>
+
               <p className="text-neutral-600 font-sans text-sm md:text-base">
                 {project.description}
               </p>
             </div>
+
             <div className="relative overflow-hidden bg-white aspect-[5/3] group mt-4">
               <motion.img
                 src={project.image}
@@ -95,6 +97,7 @@ const Work = () => {
               <motion.div
                 className="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition-opacity duration-400 pointer-events-none"
               />
+
               {/* Links panel: always visible */}
               <div className="absolute bottom-0 left-0 w-full p-4 bg-white/80 backdrop-blur-sm">
                 <div className="flex gap-4 mt-2">
@@ -123,8 +126,10 @@ const Work = () => {
                 </div>
               </div>
             </div>
+            
           </motion.div>
         ))}
+
       </div>
     </section>
   )

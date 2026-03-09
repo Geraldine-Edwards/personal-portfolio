@@ -8,7 +8,7 @@ const Contact = () => {
       className="min-h-screen flex flex-col justify-center py-28 px-6 md:px-12 bg-[#daddc9]"
     >
       <div className="max-w-3xl mx-auto">
-        {/* Heading */}
+
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,11 +30,11 @@ const Contact = () => {
           Whether it’s a collaboration, a project, or you're just exploring ideas — let's chat.
         </motion.p>
 
-        {/* Form */}
+        {/* Netlify Form */}
         <motion.form
           name="contact"
           method="POST"
-          action=""
+          action="/thank-you.html"
           data-netlify="true"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

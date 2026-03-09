@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import { motion } from "framer-motion"
-import {FiX } from 'react-icons/fi'
+import { FiX } from 'react-icons/fi'
 
 type MenuOverlayProps = {
   isOpen: boolean
@@ -13,6 +13,7 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
+
       <button
         onClick={onClose}
         className="flex items-center gap-2 absolute top-8 right-10 text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif tracking-widest"
@@ -45,7 +46,6 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
         ))}
       </nav>
 
-      
     </div>
   )
 }
