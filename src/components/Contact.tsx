@@ -34,7 +34,7 @@ const Contact = () => {
         <motion.form
           name="contact"
           method="POST"
-          action="/thank-you.html"
+          action="/thank-you"
           data-netlify="true"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -77,7 +77,8 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="mt-6 self-start font-sans text-sm tracking-wide bg-neutral-700 border border-neutral-900 px-6 py-3 hover:bg-neutral-900 text-white transition-colors duration-300 focus:outline-none focus:ring-6 focus:ring-white focus:rounded-md"
+            className="mt-6 self-start font-sans text-sm tracking-wide bg-neutral-700 border border-neutral-900 px-6 py-3 hover:bg-neutral-900 text-white transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-white 
+                   focus:ring-offset-2 focus:ring-offset-[#daddc9]"
           >
             Send Message
           </button>
