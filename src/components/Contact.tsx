@@ -34,7 +34,7 @@ const Contact = () => {
         <motion.form
           name="contact"
           method="POST"
-          action="/"
+          action=""
           data-netlify="true"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
