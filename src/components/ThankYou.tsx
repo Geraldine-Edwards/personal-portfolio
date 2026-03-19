@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 const ThankYou = () => {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-[#daddc9] px-6 md:px-12">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-[#e0d1ce] px-6 md:px-12">
       
       {/* Heading */}
       <motion.h2

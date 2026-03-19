@@ -57,6 +57,7 @@ const Contact = () => {
               type="text"
               name="name"
               required
+              placeholder="Your full name"
               className="mt-2 border-b border-neutral-400 bg-transparent py-2 transition-colors"
             />
             <ValidationError prefix="Name" field="name" errors={state.errors} />
@@ -69,6 +70,7 @@ const Contact = () => {
               type="email"
               name="email"
               required
+              placeholder="e.g. example@email.com"
               className="mt-2 border-b border-neutral-400 bg-transparent py-2 transition-colors"
             />
             <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -81,6 +83,7 @@ const Contact = () => {
               name="message"
               rows={4}
               required
+              placeholder="Please type your message here"
               className="mt-2 border-b border-neutral-400 bg-transparent py-2 transition-colors"
             />
             <ValidationError prefix="Message" field="message" errors={state.errors} />
