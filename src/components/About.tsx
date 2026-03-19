@@ -19,7 +19,7 @@ const About = () => (
       <div className="grid md:grid-cols-2 gap-16 items-start">
 
         <motion.img
-          src="/ge.jpeg"
+          src="/personal-portfolio/ge.webp"
           alt="Geraldine Edwards"
           className="w-full max-w-sm object-cover shadow-md contrast-95 saturate-75 brightness-95 sepia-[0.08]"
           initial={{ opacity: 0, y: 40 }}
