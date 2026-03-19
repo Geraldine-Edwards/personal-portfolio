@@ -5,18 +5,18 @@ import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 const testimonials = [
   {
     quote: "Geraldine is dedicated, reliable, and always delivers high-quality work.",
-    name: "A",
-    role: "B",
+    name: "Christopher",
+    role: "Wordpress Developer",
   },
   {
     quote: "A pleasure to collaborate with—Geraldine brings creativity and enthusiasm to every project.",
-    name: "C",
-    role: "D",
+    name: "Michael",
+    role: "Designer",
   },
    {
     quote: "Her professionalism and attention to detail make her stand out in any team.",
-    name: "E",
-    role: "F",
+    name: "Ali",
+    role: "Team Leader",
   },
 ]
 
