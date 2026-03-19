@@ -1,7 +1,7 @@
 # My Portfolio
 <br>
 
-# [Live Site - Click here](https://geraldine-edwards-portfolio.netlify.app)
+# [Live Site - Click here](https://geraldine-edwards.github.io/personal-portfolio/)
 <br>
 
 A personal portfolio website built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/).  
@@ -83,6 +83,50 @@ Showcasing selected projects, skills, and contact information with a focus on ac
 
 <br>
 
+## Getting Started
+
+To run this project locally:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Geraldine-Edwards/personal-portfolio.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+For production build:
+```bash
+npm run build
+```
+
+---
+
+<br>
+
+## Accessibility Highlights
+
+- Semantic HTML structure with landmark elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`)
+- All interactive elements are keyboard focusable and have visible focus indicators
+- Logical tab order and no focus traps
+- High color contrast and readable font sizes
+- Clear labels for all form fields and buttons
+- ARIA labels for icons and custom controls
+- Responsive design for all devices
+- Privacy policy modal directs focus to the close button for screen readers
+
+---
+
+<br>
 
 ## Credits
 
