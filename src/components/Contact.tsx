@@ -1,12 +1,12 @@
 import { useForm, ValidationError } from '@formspree/react';
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import PrivacyPolicy from "./PrivacyPolicy";
+
+
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("meernknr"); // formspree ID
-  const [showPrivacy, setShowPrivacy] = useState(false);
+
 
   useEffect(() => {
     if (state.succeeded) {
@@ -17,9 +17,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col justify-center py-28 px-6 md:px-12 bg-[#daddc9]"
+      className="min-h-screen flex flex-col justify-center items-center py-28 px-6 md:px-12 bg-[#daddc9]"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="w-full flex flex-col items-center px-4 md:px-0">
 
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -48,9 +48,9 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.4 }}
           viewport={{ once: true, amount: 0.4 }}
-          className="grid gap-8 max-w-xl"
+          className="grid gap-8 w-full max-w-xl"
         >
-          <label htmlFor="name" className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
+          <label htmlFor="name" className="flex flex-col font-sans text-sm font-medium tracking-wide text-neutral-900">
             Name
             <input
               id="name"
@@ -62,7 +62,7 @@ const Contact = () => {
             <ValidationError prefix="Name" field="name" errors={state.errors} />
           </label>
 
-          <label htmlFor="email" className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
+          <label htmlFor="email" className="flex flex-col font-sans text-sm font-medium tracking-wide text-neutral-900">
             Email
             <input
               id="email"
@@ -74,7 +74,7 @@ const Contact = () => {
             <ValidationError prefix="Email" field="email" errors={state.errors} />
           </label>
 
-          <label htmlFor="message" className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
+          <label htmlFor="message" className="flex flex-col font-sans text-sm font-medium tracking-wide text-neutral-900">
             Message
             <textarea
               id="message"
@@ -95,56 +95,6 @@ const Contact = () => {
             Send Message
           </button>
         </motion.form>
-
-        <div className="flex gap-6 mt-8 items-center">
-          <motion.a
-            href="https://www.linkedin.com/in/geraldine-edwards-"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            whileHover={{ scale: 1.15 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-neutral-700 hover:text-blue-700"
-          >
-            <FaLinkedin size={40} />
-          </motion.a>
-
-          <motion.a
-            href="https://github.com/Geraldine-Edwards"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            whileHover={{ scale: 1.15 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-neutral-700 hover:text-black"
-          >
-            <FaGithub size={40} />
-          </motion.a>
-
-          <motion.button
-            type="button"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="underline text-sm text-neutral-700 hover:text-blue-700 transition-colors"
-            onClick={() => setShowPrivacy(true)}
-          >
-            Privacy Policy
-          </motion.button>
-        </div>
-
-        {showPrivacy && (
-          <PrivacyPolicy onClose={() => setShowPrivacy(false)} />
-        )}
       </div>
     </section>
   );

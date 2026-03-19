@@ -90,7 +90,8 @@ const Work = () => {
             <div className="relative overflow-hidden bg-white aspect-[5/3] group mt-4">
               <motion.img
                 src={project.image}
-                alt={project.title}
+                alt={`Screenshot of ${project.title} project`}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 contrast-95 saturate-75 brightness-95 sepia-[0.08]"
               />
               {/* Dark overlay */}

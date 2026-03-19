@@ -20,7 +20,7 @@ const About = () => (
 
         <motion.img
           src="/personal-portfolio/ge.webp"
-          alt="Geraldine Edwards"
+          alt="Portrait of Geraldine Edwards"
           className="w-full max-w-sm object-cover shadow-md contrast-95 saturate-75 brightness-95 sepia-[0.08]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
