@@ -11,7 +11,7 @@ import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer/Footer"
 import ThankYou from "./components/ThankYou"
-import PrivacyPolicy from "./components/Footer/PrivacyPolicy";
+import PrivacyPolicy from "./components/Footer/PrivacyPolicy/PrivacyPolicy";
 
 function AppContent() {
   const location = useLocation();
