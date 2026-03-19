@@ -1,7 +1,17 @@
-import { motion } from "framer-motion"
-import { FaLinkedin, FaGithub } from "react-icons/fa"
+import { useForm, ValidationError } from '@formspree/react';
+import { useEffect } from "react"; 
+import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("meernkr");  //formspree ID
+
+  useEffect(() => {
+    if (state.succeeded) {
+      window.location.href = "/thank-you";
+    }
+  }, [state.succeeded]);
+
   return (
     <section
       id="contact"
@@ -30,53 +40,53 @@ const Contact = () => {
           Whether it’s a collaboration, a project, or you're just exploring ideas — let's chat.
         </motion.p>
 
-        {/* Netlify Form */}
         <motion.form
-          name="contact"
-          method="POST"
-          action="/thank-you"
-          data-netlify="true"
+          onSubmit={handleSubmit}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.4 }}
           viewport={{ once: true, amount: 0.4 }}
           className="grid gap-8 max-w-xl"
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="_gotcha" style={{ display: "none" }} />
-
-          <label className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
+          <label htmlFor="name" className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
             Name
             <input
+              id="name"
               type="text"
               name="name"
               required
-              className="mt-2 border-b border-neutral-400 bg-transparent py-2  transition-colors"
+              className="mt-2 border-b border-neutral-400 bg-transparent py-2 transition-colors"
             />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </label>
 
-          <label className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
+          <label htmlFor="email" className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
             Email
             <input
+              id="email"
               type="email"
               name="email"
               required
               className="mt-2 border-b border-neutral-400 bg-transparent py-2 transition-colors"
             />
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
           </label>
 
-          <label className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
+          <label htmlFor="message" className="flex flex-col font-sans text-sm tracking-wide text-neutral-800">
             Message
             <textarea
+              id="message"
               name="message"
               rows={4}
               required
               className="mt-2 border-b border-neutral-400 bg-transparent py-2 transition-colors"
             />
+            <ValidationError prefix="Message" field="message" errors={state.errors} />
           </label>
 
           <button
             type="submit"
+            disabled={state.submitting}
             className="mt-6 self-start font-sans text-sm tracking-wide bg-neutral-700 border border-neutral-900 px-6 py-3 hover:bg-neutral-900 text-white transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-white 
                    focus:ring-offset-2 focus:ring-offset-[#daddc9]"
           >
@@ -84,7 +94,6 @@ const Contact = () => {
           </button>
         </motion.form>
 
-        {/* Icons below the form */}
         <div className="flex gap-6 mt-8">
           <motion.a
             href="https://www.linkedin.com/in/geraldine-edwards-"
@@ -120,7 +129,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
