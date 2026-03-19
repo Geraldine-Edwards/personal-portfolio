@@ -42,10 +42,6 @@ tailwind.output.css
 # Coverage reports
 coverage/
 
-# Lock files (optional, if you don’t want to track them)
-package-lock.json
-yarn.lock
-
 # Miscellaneous
 *.bak
 *.tmp
