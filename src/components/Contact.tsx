@@ -1,10 +1,12 @@
 import { useForm, ValidationError } from '@formspree/react';
-import { useEffect } from "react"; 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("meernknr");  //formspree ID
+  const [state, handleSubmit] = useForm("meernknr"); // formspree ID
+  const [showPrivacy, setShowPrivacy] = useState(false);
 
   useEffect(() => {
     if (state.succeeded) {
@@ -94,7 +96,7 @@ const Contact = () => {
           </button>
         </motion.form>
 
-        <div className="flex gap-6 mt-8">
+        <div className="flex gap-6 mt-8 items-center">
           <motion.a
             href="https://www.linkedin.com/in/geraldine-edwards-"
             target="_blank"
@@ -126,7 +128,23 @@ const Contact = () => {
           >
             <FaGithub size={40} />
           </motion.a>
+
+          <motion.button
+            type="button"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="underline text-sm text-neutral-700 hover:text-blue-700 transition-colors"
+            onClick={() => setShowPrivacy(true)}
+          >
+            Privacy Policy
+          </motion.button>
         </div>
+
+        {showPrivacy && (
+          <PrivacyPolicy onClose={() => setShowPrivacy(false)} />
+        )}
       </div>
     </section>
   );
