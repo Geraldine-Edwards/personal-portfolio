@@ -27,7 +27,7 @@ Showcasing selected projects, skills, and contact information with a focus on ac
 ---
 
 ## Preview
-<img src="./public/screenshot.png" alt="Portfolio Screenshot" width="300">
+<img src="./public/screenshot.webp" alt="Portfolio Screenshot" width="300">
 
 
 ## Languages 
