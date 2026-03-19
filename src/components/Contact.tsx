@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("meernkr");  //formspree ID
+  const [state, handleSubmit] = useForm("meernknr");  //formspree ID
 
   useEffect(() => {
     if (state.succeeded) {
