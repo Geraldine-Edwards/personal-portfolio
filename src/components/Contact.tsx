@@ -8,7 +8,7 @@ const Contact = () => {
 
   useEffect(() => {
     if (state.succeeded) {
-      window.location.href = "/thank-you";
+      window.location.href = "/personal-portfolio/#/thank-you";
     }
   }, [state.succeeded]);
 
