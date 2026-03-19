@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar"
 import MenuOverlay from "./components/MenuOverlay"
 import Hero from "./components/Hero"
