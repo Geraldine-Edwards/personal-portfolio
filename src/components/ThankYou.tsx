@@ -26,7 +26,7 @@ const ThankYou = () => {
 
       {/* Back to Home Button with Motion */}
       <motion.a
-        href="/"
+        href="/personal-portfolio/#/"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.4 }}
