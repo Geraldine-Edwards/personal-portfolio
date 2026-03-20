@@ -1,10 +1,11 @@
 import { motion } from "framer-motion"
 
-const skills = [
+const techSkills = [
   {
     category: "Front-end / UI",
     items: [
-      "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript (beginner)", "React", "Responsive Design"]
+      "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript (beginner)", "React", "Responsive Design"
+    ]
   },
   {
     category: "Back-end & Databases",
@@ -12,7 +13,7 @@ const skills = [
   },
   {
     category: "Integration & APIs",
-    items: ["RESTful APIs", "Third-party integrations"]
+    items: ["RESTful APIs", "Third-party integrations", "Formspree"]
   },
   {
     category: "Testing & Development",
@@ -20,7 +21,7 @@ const skills = [
   },
   {
     category: "Version Control & Deployment",
-    items: ["Git", "GitHub", "Heroku", "Netlify", "Coolify"]
+    items: ["Git", "GitHub", "GitHub Pages", "GitHub Actions (CI/CD)", "Heroku", "Netlify", "Coolify"]
   },
   {
     category: "SEO, Performance & Accessibility",
@@ -33,10 +34,43 @@ const skills = [
   {
     category: "Collaboration",
     items: ["Agile teamwork", "Collaborative project development"]
+  }
+]
+
+const softSkills = [
+  {
+    category: "Communication",
+    items: [
+      "Clear communication",
+      "Active listening",
+      "Openness to feedback"
+    ]
   },
   {
-    category: "Soft Skills",
-    items: [  "Empathy", "Clear communication", "Teamwork", "Adaptability", "Problem-solving", "Attention to detail", "Time management"    ]
+    category: "Interpersonal",
+    items: [
+      "Empathy",
+      "Teamwork",
+      "Patience"
+    ]
+  },
+  {
+    category: "Cognitive",
+    items: [
+      "Problem-solving",
+      "Critical thinking",
+      "Creativity",
+      "Resourcefulness"
+    ]
+  },
+  {
+    category: "Work Habits",
+    items: [
+      "Attention to detail",
+      "Time management",
+      "Adaptability",
+      "Initiative"
+    ]
   }
 ]
 
@@ -52,14 +86,13 @@ const Skills = () => (
       viewport={{ once: true }}
       className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
     >
-      Skills
+      Technical Skills
     </motion.h2>
 
     <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
-      
-      {skills.map((skill, i) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-28">
+      {techSkills.map((skill, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0 }}
@@ -68,7 +101,7 @@ const Skills = () => (
           viewport={{ once: true , amount: 0.4 }}
           className="flex flex-col gap-4"
         >
-          <h3 className="text-2xl md:text-3xl font-serif">{skill.category}</h3>
+          <h4 className="text-xl md:text-2xl font-serif">{skill.category}</h4>
           <ul className="list-none font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
             {skill.items.map((item, idx) => (
               <li key={idx} className="before:content-['•'] before:mr-2 before:text-neutral-400">
@@ -78,7 +111,34 @@ const Skills = () => (
           </ul>
         </motion.div>
       ))}
-      
+    </div>
+
+    {/* Soft Skills Section */}
+    <motion.h2
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
+    >
+      Soft Skills
+    </motion.h2>
+
+    <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 bg-[#e7e3e0] rounded-xl p-8">
+      {softSkills.map((group, i) => (
+        <div key={i} className="flex flex-col gap-4">
+          <h4 className="text-lg md:text-xl font-serif text-neutral-900">{group.category}</h4>
+          <ul className="list-none font-sans text-neutral-700 text-sm md:text-base leading-relaxed">
+            {group.items.map((item, idx) => (
+              <li key={idx} className="before:content-['•'] before:mr-2 before:text-neutral-400">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   </section>
 )
