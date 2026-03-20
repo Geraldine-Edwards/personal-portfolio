@@ -45,17 +45,16 @@ const Hero = () => {
       >
         <motion.span
           aria-hidden="true"
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 16, 0] }}
           transition={{
             duration: 1,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="inline-block"
+          className="inline-block text-5xl text-neutral-700"
         >
           &#x25BC;
         </motion.span>
-
         <span className="sr-only">Scroll down</span>
       </motion.div>
     </section>
