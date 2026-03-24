@@ -101,7 +101,7 @@ const Skills = () => (
           viewport={{ once: true , amount: 0.4 }}
           className="flex flex-col gap-4"
         >
-          <h4 className="text-xl md:text-2xl font-serif">{skill.category}</h4>
+          <h3 className="text-xl md:text-2xl font-serif">{skill.category}</h3>
           <ul className="list-none font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
             {skill.items.map((item, idx) => (
               <li key={idx} className="before:content-['•'] before:mr-2 before:text-neutral-400">
@@ -129,7 +129,7 @@ const Skills = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 bg-[#e7e3e0] rounded-xl p-8">
       {softSkills.map((group, i) => (
         <div key={i} className="flex flex-col gap-4">
-          <h4 className="text-lg md:text-xl font-serif text-neutral-900">{group.category}</h4>
+          <h3 className="text-lg md:text-xl font-serif text-neutral-900">{group.category}</h3>
           <ul className="list-none font-sans text-neutral-700 text-sm md:text-base leading-relaxed">
             {group.items.map((item, idx) => (
               <li key={idx} className="before:content-['•'] before:mr-2 before:text-neutral-400">
