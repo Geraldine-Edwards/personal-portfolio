@@ -1,7 +1,10 @@
 import type { FC } from "react"
 import { motion } from "framer-motion"
+import { useRef, useEffect } from  "react"
+import { FocusTrap } from "focus-trap-react";
 import CloseButton from "../utils/CloseButton";
 import { FiX } from 'react-icons/fi'
+
 
 type MenuOverlayProps = {
   isOpen: boolean
@@ -10,13 +13,25 @@ type MenuOverlayProps = {
 }
 
 const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => {
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      closeBtnRef.current?.focus()
+    }
+   }, [isOpen]);
+  
   if (!isOpen) return null
 
   return (
+   
+     <FocusTrap>
+      {/* Keep the keyboard user inside the overlay until it is closed */}
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
 
       <CloseButton
         onClick={onClose}
+        buttonRef={closeBtnRef}
         className="flex items-center gap-2 absolute top-8 right-10 text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif tracking-widest"
       >
         <span>CLOSE</span>
@@ -48,6 +63,7 @@ const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => 
       </nav>
 
     </div>
+    </FocusTrap>
   )
 }
 
