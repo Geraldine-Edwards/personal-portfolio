@@ -11,7 +11,7 @@ import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer/Footer"
 import ThankYou from "./components/ThankYou"
-import PrivacyPolicy from "./components/Footer/PrivacyPolicy/PrivacyPolicy";
+import PrivacyPolicy from "./components/Footer/PrivacyPolicy";
 
 function AppContent() {
   const location = useLocation();
@@ -33,7 +33,7 @@ function AppContent() {
     <div className="font-sans">
       {showNavbar && (
         <>
-          <Header onMenuClick={() => setMenuOpen(true)} />
+          <Header onMenuClick={() => setMenuOpen(true)} /> ()
           <Navbar onMenuClick={() => setMenuOpen(true)} />
           <MenuOverlay
             isOpen={menuOpen}

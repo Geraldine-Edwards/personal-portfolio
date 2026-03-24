@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import CloseButton from "./CloseButton";
+import CloseButton from "../utils/CloseButton";
 
 
 const PrivacyPolicy = ({ onClose }: { onClose: () => void }) => {
@@ -19,7 +19,10 @@ const PrivacyPolicy = ({ onClose }: { onClose: () => void }) => {
       style={{ background: "transparent" }}
     >
       <div className="max-w-lg w-full p-8 rounded shadow-lg bg-white text-neutral-900 relative">
-        <CloseButton onClick={onClose} buttonRef={closeBtnRef} />
+        <CloseButton
+          onClick={onClose}
+          className="absolute top-4 right-4 text-neutral-700 hover:text-neutral-900 text-lg font-bold"
+        />
         <h2 className="text-2xl font-serif mb-4">Privacy Policy</h2>
         <p className="mb-4">
           Your privacy is important to me. When you submit a message through the contact form, your name, email address, and message are sent securely to Formspree, a GDPR-compliant third-party service. Your information is used only to respond to your inquiry and is not shared or sold to anyone else.
