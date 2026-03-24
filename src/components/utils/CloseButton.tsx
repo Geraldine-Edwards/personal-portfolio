@@ -5,12 +5,12 @@ type CloseButtonProps = {
   className?: string;
 };
 
-const CloseButton = ({ onClick, buttonRef, children, className }: CloseButtonProps) => (
+const CloseButton = ({ onClick, buttonRef, children, className, id }: CloseButtonProps) => (
   <button
     ref={buttonRef}
     onClick={onClick}
     className={className}
-    aria-label="Close"
+    aria-label="Close button"
   >
   {children ? children : "×"}
   </button>
