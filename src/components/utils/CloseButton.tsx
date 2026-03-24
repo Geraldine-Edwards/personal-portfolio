@@ -5,7 +5,7 @@ type CloseButtonProps = {
   className?: string;
 };
 
-const CloseButton = ({ onClick, buttonRef, children, className, id }: CloseButtonProps) => (
+const CloseButton = ({ onClick, buttonRef, children, className }: CloseButtonProps) => (
   <button
     ref={buttonRef}
     onClick={onClick}
