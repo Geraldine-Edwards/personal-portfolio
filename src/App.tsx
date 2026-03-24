@@ -28,14 +28,16 @@ function AppContent() {
   const handlePrivacyClick = () => {
     // Save the element that triggered the modal
     triggerRef.current = document.activeElement as HTMLElement;
+    // Modal mounts
     setShowPrivacy(true);
   };
 
   const handleClosePrivacy = () => {
+    // Modal unmounts
     setShowPrivacy(false);
-    // Restore focus after modal unmounts
+    // Restore focus to the parent component (the privacy policy button) for accessibility
     setTimeout(() => {
-      triggerRef.current?.focus();
+      triggerRef.current?.focus(); 
     }, 0);
   };
 
