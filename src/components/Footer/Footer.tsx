@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = ({ onPrivacyClick }: { onPrivacyClick: () => void }) => (
@@ -25,6 +24,7 @@ const Footer = ({ onPrivacyClick }: { onPrivacyClick: () => void }) => (
     </div>
     <button
       type="button"
+      aria-haspopup="dialog"
       className="underline text-sm font-medium text-neutral-700 hover:text-blue-700 transition-colors mb-2"
       onClick={onPrivacyClick}
     >
