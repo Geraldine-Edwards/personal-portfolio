@@ -22,11 +22,14 @@ const About = () => (
           src="/personal-portfolio/ge.webp"
           alt="Portrait of Geraldine Edwards"
           className="w-full max-w-sm object-cover shadow-md contrast-95 saturate-75 brightness-95 sepia-[0.08]"
+          width="800"
+          height="1149"
+          loading="lazy"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-        />
+                />
 
         <div className="space-y-8">
           <motion.p
