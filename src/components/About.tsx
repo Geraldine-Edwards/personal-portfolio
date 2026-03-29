@@ -9,7 +9,7 @@ const About = () => (
     <div className="py-28 md:py-32 px-6 md:px-12 max-w-6xl mx-auto"> 
       <SectionHeading
       >
-        About
+        About Me
       </SectionHeading>
 
       <div className="grid md:grid-cols-2 gap-16 items-start">
