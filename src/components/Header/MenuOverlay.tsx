@@ -26,7 +26,7 @@ const MenuOverlay= ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
 
     document.addEventListener("keydown", handleEscKey);
     return () => {
-      document.addEventListener("keydown", handleEscKey);
+      document.removeEventListener("keydown", handleEscKey);
     };
   }, [isOpen, onClose]);
 
