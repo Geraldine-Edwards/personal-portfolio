@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
+import SectionHeading from "./ui/SectionHeading";
 
   {/* insert some quotes text */}
 const testimonials = [
@@ -25,15 +26,9 @@ const Testimonials = () => (
     id="testimonials"
     className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto"
   >
-    <motion.h2
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
-    >
+    <SectionHeading>
       What People Say
-    </motion.h2>
+    </SectionHeading>
 
     <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 

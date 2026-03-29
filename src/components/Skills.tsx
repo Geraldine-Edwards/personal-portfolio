@@ -1,4 +1,5 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import SectionHeading from "./ui/SectionHeading";
 
 const techSkills = [
   {
@@ -79,15 +80,9 @@ const Skills = () => (
     id="skills"
     className="py-28 md:py-32 px-6 md:px-10 lg:px-16 xl:px-12 max-w-[1600px] mx-auto bg-[#e0d1ce]"
   >
-    <motion.h2
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
-    >
+    <SectionHeading>
       Technical Skills
-    </motion.h2>
+    </SectionHeading>
 
     <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 
@@ -114,15 +109,9 @@ const Skills = () => (
     </div>
 
     {/* Soft Skills Section */}
-    <motion.h2
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-serif mb-16 text-left text-neutral-900"
-    >
+    <SectionHeading>
       Soft Skills
-    </motion.h2>
+    </SectionHeading>
 
     <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
 

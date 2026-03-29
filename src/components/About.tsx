@@ -1,4 +1,5 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import SectionHeading from "../components/ui/SectionHeading";
 
 const About = () => (
   <section
@@ -6,15 +7,10 @@ const About = () => (
     className="w-full bg-[#daddc9]"
   >
     <div className="py-28 md:py-32 px-6 md:px-12 max-w-6xl mx-auto"> 
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-serif mb-16 text-left"
+      <SectionHeading
       >
         About
-      </motion.h2>
+      </SectionHeading>
 
       <div className="grid md:grid-cols-2 gap-16 items-start">
 

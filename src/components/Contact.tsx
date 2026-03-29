@@ -2,6 +2,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useEffect} from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import SectionHeading from './ui/SectionHeading';
 
 
 
@@ -23,15 +24,9 @@ const Contact = () => {
     >
       <div className="w-full flex flex-col items-center px-4 md:px-0">
 
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="text-4xl md:text-5xl font-serif tracking-tight text-neutral-900 mb-10"
-        >
+        <SectionHeading>
           Let’s Work Together
-        </motion.h2>
+        </SectionHeading>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}

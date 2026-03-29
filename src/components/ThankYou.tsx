@@ -1,18 +1,14 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import SectionHeading from "./ui/SectionHeading";
 
 const ThankYou = () => {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-[#e0d1ce] px-6 md:px-12">
       
       {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        className="text-4xl md:text-5xl font-serif text-gray-900 mb-8 text-center"
-      >
+      <SectionHeading>
         Thank You!
-      </motion.h2>
+      </SectionHeading>
 
       {/* Paragraph */}
       <motion.p
