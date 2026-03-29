@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import SectionHeading from "./ui/SectionHeading";
+import SectionDivider from "./ui/SectionDivider";
 
   {/* insert some quotes text */}
 const testimonials = [
@@ -30,7 +31,7 @@ const Testimonials = () => (
       What People Say
     </SectionHeading>
 
-    <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
+    <SectionDivider />
 
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {testimonials.map((t, i) => (

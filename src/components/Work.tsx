@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./ui/SectionHeading";
+import SectionDivider from "./ui/SectionDivider";
 
 type Project = {
   title: string
@@ -59,7 +60,7 @@ const Work = () => {
         Selected Work
       </SectionHeading>
 
-      <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
+      <SectionDivider />
 
       {/* Grid div for projects (but flex for project cards)*/}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-16">

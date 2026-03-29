@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./ui/SectionHeading";
+import SectionDivider from "./ui/SectionDivider";
 
 const techSkills = [
   {
@@ -84,7 +85,7 @@ const Skills = () => (
       Technical Skills
     </SectionHeading>
 
-    <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
+    <SectionDivider />
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-28">
       {techSkills.map((skill, i) => (
@@ -113,7 +114,7 @@ const Skills = () => (
       Soft Skills
     </SectionHeading>
 
-    <div className="h-px w-full bg-neutral-400 mx-auto mb-12" />
+    <SectionDivider />
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 bg-[#e7e3e0] rounded-xl p-8">
       {softSkills.map((group, i) => (
