@@ -1,8 +1,13 @@
 import Navbar from "./Navbar";
 
-const Header = ({ onMenuClick }: { onMenuClick: () => void }) => (
+type HeaderProps = {
+  menuOpen: boolean;
+  onMenuClick: () => void;
+};
+
+const Header = ({ menuOpen, onMenuClick }: HeaderProps) => (
   <header>
-    <Navbar onMenuClick={onMenuClick} />
+    <Navbar menuOpen={menuOpen} onMenuClick={onMenuClick} />
   </header>
 );
 

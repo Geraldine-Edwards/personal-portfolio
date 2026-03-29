@@ -1,4 +1,3 @@
-import type { FC } from "react"
 import { motion } from "framer-motion"
 import { useRef, useEffect } from  "react"
 import { FocusTrap } from "focus-trap-react";
@@ -12,7 +11,7 @@ type MenuOverlayProps = {
   handleClick: (section: string) => void
 }
 
-const MenuOverlay: FC<MenuOverlayProps> = ({ isOpen, onClose, handleClick }) => {
+const MenuOverlay= ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-import type { FC } from "react"
 import { useState, useEffect } from "react"
 import { FiMenu } from 'react-icons/fi'
 
@@ -7,7 +6,7 @@ type NavbarProps = {
   onMenuClick: () => void
 }
 
-const Navbar: FC<NavbarProps> = ({ menuOpen, onMenuClick }) => {
+const Navbar = ({ menuOpen, onMenuClick }: NavbarProps) => {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
