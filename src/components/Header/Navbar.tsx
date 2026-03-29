@@ -3,10 +3,11 @@ import { useState, useEffect } from "react"
 import { FiMenu } from 'react-icons/fi'
 
 type NavbarProps = {
+  menuOpen: boolean;
   onMenuClick: () => void
 }
 
-const Navbar: FC<NavbarProps> = ({ onMenuClick }) => {
+const Navbar: FC<NavbarProps> = ({ menuOpen, onMenuClick }) => {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -39,6 +40,8 @@ const Navbar: FC<NavbarProps> = ({ onMenuClick }) => {
         {/* Menu stays fixed */}
         <button
           onClick={onMenuClick}
+          aria-expanded={menuOpen} 
+          aria-controls="main-menu" 
           className=" flex items-center gap-2 font-serif text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-widest"
         >
           <span>MENU</span>
