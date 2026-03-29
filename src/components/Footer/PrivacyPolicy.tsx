@@ -13,13 +13,12 @@ const PrivacyPolicy = ({ onClose }: PrivacyPolicyProps) => {
 
   {/* Ensure Esc key can close the modal */}
   useEffect(() => {
-      function handleKeyDown(e: KeyboardEvent) {
-        if (e.key === "Escape") {
-          onClose();
-        }
-      }
-      document.addEventListener("keydown", handleKeyDown);
-      return () => document.removeEventListener("keydown", handleKeyDown);
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    }
+    
+    document.addEventListener("keydown", handleEscKey);
+      return () => document.removeEventListener("keydown", handleEscKey);
     }, [onClose]);
 
   {/* Keep the keyboard user inside the overlay until it is closed using Focus Trap */}
