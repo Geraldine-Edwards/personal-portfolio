@@ -49,7 +49,7 @@ function AppContent() {
       {showNavbar && (
         <>
           <Header onMenuClick={() => setMenuOpen(true)} />
-          <Navbar onMenuClick={() => setMenuOpen(true)} />
+          <Navbar menuOpen={menuOpen} onMenuClick={() => setMenuOpen(true)} />
           <MenuOverlay
             isOpen={menuOpen}
             onClose={() => setMenuOpen(false)}
