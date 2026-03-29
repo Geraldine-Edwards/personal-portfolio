@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./components/Header/Navbar";
 import MenuOverlay from "./components/Header/MenuOverlay";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero";
@@ -48,8 +47,7 @@ function AppContent() {
     <div className="font-sans">
       {showNavbar && (
         <>
-          <Header onMenuClick={() => setMenuOpen(true)} />
-          <Navbar menuOpen={menuOpen} onMenuClick={() => setMenuOpen(true)} />
+          <Header menuOpen={menuOpen} onMenuClick={() => setMenuOpen(true)} />
           <MenuOverlay
             isOpen={menuOpen}
             onClose={() => setMenuOpen(false)}
