@@ -7,22 +7,23 @@ type NavbarProps = {
 }
 
 const Navbar = ({ menuOpen, onMenuClick }: NavbarProps) => {
-  const [scrollY, setScrollY] = useState(0)
+  // Track how far the element moves (matches what UI uses)
+  const [translateY, setTranslateY] = useState(0)
+
+  // Maximum upward translation in px
+  const maxTranslate = 80
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY)
+      // Move up as you scroll, but never more than 80 pixels.
+      const newTranslateY = Math.min(window.scrollY, maxTranslate)
+      // Avoids component re-render if the value hasn't changed (prev = current value)
+      setTranslateY(prev  => (prev !== newTranslateY ? newTranslateY : prev))
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  // Maximum upward translation in px
-  const maxTranslate = 80
-
-  // Calculate translation proportional to scroll (clamp to maxTranslate)
-  const translateY = Math.min(scrollY, maxTranslate)
 
   return (
     <header className="fixed top-0 left-0 w-full z-40 bg-white">
@@ -31,6 +32,7 @@ const Navbar = ({ menuOpen, onMenuClick }: NavbarProps) => {
         {/* Logo / Name moves up as user scrolls */}
         <div
           className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight transition-transform duration-100"
+          // Use the translateY value for the UI
           style={{ transform: `translateY(-${translateY}px)` }}
         >
           Geraldine Edwards
