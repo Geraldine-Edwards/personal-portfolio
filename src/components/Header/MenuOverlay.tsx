@@ -15,16 +15,29 @@ const MenuOverlay= ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      closeBtnRef.current?.focus()
-    }
-   }, [isOpen]);
+    if (!isOpen) return;
+
+    // Focus the close button when the menu opens
+    closeBtnRef.current?.focus()
+
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", handleEscKey);
+    return () => {
+      document.addEventListener("keydown", handleEscKey);
+    };
+  }, [isOpen, onClose]);
+
+
+  // Hide menu form user
+  if (!isOpen) return null;
   
-  if (!isOpen) return null
 
   return (
    
-     <FocusTrap>
+    <FocusTrap>
       {/* Keep the keyboard user inside the overlay until it is closed */}
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
 
