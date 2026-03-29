@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FocusTrap } from "focus-trap-react";
-import CloseButton from "../utils/CloseButton";
+import CloseButton from "../ui/CloseButton";
 
 type PrivacyPolicyProps = {
   onClose: () => void;

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { useRef, useEffect } from  "react"
 import { FocusTrap } from "focus-trap-react";
-import CloseButton from "../utils/CloseButton";
+import CloseButton from "../ui/CloseButton";
 import { FiX } from 'react-icons/fi'
 
 
