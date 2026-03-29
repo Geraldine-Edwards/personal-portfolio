@@ -1,18 +1,20 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useEffect} from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("meernknr"); // formspree ID
+  const navigateToThankYouPage = useNavigate(); 
 
 
   useEffect(() => {
     if (state.succeeded) {
-      window.location.href = "/personal-portfolio/#/thank-you";
+      navigateToThankYouPage("/thank-you");
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, navigateToThankYouPage]);
 
   return (
     <section
