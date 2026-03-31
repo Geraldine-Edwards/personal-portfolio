@@ -4,8 +4,6 @@
 # [Live Site - Click here](https://geraldine-edwards.github.io/personal-portfolio/)
 <br>
 
-<img src="./public/vite.svg" alt="Vite" height="32">
-
 A personal portfolio website built with [React](https://react.dev/) <img src="./public/react.svg" alt="React logo" height="32">, [TypeScript](https://www.typescriptlang.org/) <img src="./public/ts-logo-128.svg" alt="TypeScript logo" height="32">, and [Vite](https://vitejs.dev/) <img src="./public/vite.svg" alt="Vite logo" height="32">.  
 
 
