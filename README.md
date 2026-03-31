@@ -4,12 +4,10 @@
 # [Live Site - Click here](https://geraldine-edwards.github.io/personal-portfolio/)
 <br>
 
-A personal portfolio website built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/).  
-
-
-<img src="./public/react.svg" alt="React" height="32">
-<img src="./public/ts-logo-128.svg" alt="TypeScript" height="32">
 <img src="./public/vite.svg" alt="Vite" height="32">
+
+A personal portfolio website built with [React](https://react.dev/) <img src="./public/react.svg" alt="React logo" height="32">, [TypeScript](https://www.typescriptlang.org/) <img src="./public/ts-logo-128.svg" alt="TypeScript logo" height="32">, and [Vite](https://vitejs.dev/) <img src="./public/vite.svg" alt="Vite logo" height="32">.  
+
 
 <br>
 
@@ -23,11 +21,15 @@ Showcasing selected projects, skills, and contact information with a focus on ac
 
 - **Responsive & Accessible:** Mobile-friendly and screen reader accessible.
 - **Animated UI:** Smooth transitions with Framer Motion.
+- **Custom UI Components:** Includes reusable components like CloseButton, SectionDivider, and SectionHeading.
+- **Custom Hooks:** Accessibility-focused hooks such as UseEscapeKey and UseFocusOnOpen.
+- **Focus Management:** Uses focus-trap-react for accessible modals and overlays.
 - **Project Showcase:** Live demos and GitHub links for each project.
+- **Skills & Testimonials:** Clearly organized, easy to read.
 - **Contact Form:** Formspree-powered, spam and GDPR-protected contact form.
 - **Site-wide Navigation:** Easy navigation with React Router.
 - **Automated Deployment:** Built and deployed with GitHub Actions and GitHub Pages.
-- **Skills & Testimonials:** Clearly organized, easy to read.
+
 
 
 ---
@@ -60,6 +62,7 @@ Showcasing selected projects, skills, and contact information with a focus on ac
 <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
 <img src="https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion">
 <img src="https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router">
+<img src="https://img.shields.io/badge/focus--trap--react-0055FF?style=for-the-badge&logo=react&logoColor=white" alt="Focus-Trap-React">
 <img src="https://img.shields.io/badge/Formspree-FF4F00?style=for-the-badge&logo=formspree&logoColor=white" alt="Formspree">
 <img src="https://img.shields.io/badge/react--icons-000000?style=for-the-badge&logo=react&logoColor=white" alt="react-icons">
 
@@ -104,10 +107,45 @@ npm run dev
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-For production build:
+Preview the production build:
 ```bash
 npm run build
+npm run preview
 ```
+
+5. Lint your code:
+Preview the production build:
+```bash
+npm run lint
+```
+This project uses ESLint for code quality checks.
+
+6. Deploy to GitHub Pages:
+
+- Automated deployment is set up via GitHub Actions.
+
+To deploy manually, run:
+```bash
+npm run deploy
+```
+This uses the gh-pages branch for deployment.
+
+---
+
+<br>
+
+## Project Structure & Custom Features
+### Custom UI Components:
+Reusable components like CloseButton, SectionDivider, and SectionHeading are used throughout for consistency and maintainability.
+
+### Custom Hooks:
+Includes UseEscapeKey and UseFocusOnOpen for accessibility and keyboard navigation.
+
+### PWA Support:
+Includes a web manifest and SVG icons for installability and better mobile experience.
+
+### Strict TypeScript:
+The project uses strict TypeScript settings for type safety and reliability.
 
 ---
 
@@ -122,7 +160,7 @@ npm run build
 - Clear labels for all form fields and buttons
 - ARIA labels for icons and custom controls
 - Responsive design for all devices
-- Privacy policy modal directs focus to the close button for screen readers
+- Privacy policy modal and Navigation menu list directs focus to the close button for screen readers
 
 ---
 
@@ -135,6 +173,7 @@ npm run build
 - react-icons: Scalable SVG icon components in React.
 - Formspree: Secure contact form backend.
 - Framer Motion: UI animations and transitions.
+- focus-trap-react: Accessibility for modals and overlays.
 - React Router: Site navigation and routing.
 - Shields.io: Badge generation for README.
 - GitHub Actions: Automated build and deployment to GitHub Pages.
