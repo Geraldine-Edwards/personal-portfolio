@@ -10,27 +10,26 @@ type PrivacyPolicyProps = {
 }
 
 const PrivacyPolicy = ({ onClose, isOpen }: PrivacyPolicyProps) => {
-  {/* Create a button reference */}
+  // Create a button reference
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
-  {/* Ensure Esc key can close the modal */}
+  // Ensure Esc key can close the modal only once it is active
   useEscapeKey(onClose, isOpen);
   useFocusOnOpen(closeBtnRef, isOpen)
 
   if (!isOpen) return null
 
-  {/* Keep the keyboard user inside the overlay until it is closed using Focus Trap */}
+  // Keep the keyboard user inside the modal until it is closed using Focus Trap 
   return (
     <FocusTrap
       focusTrapOptions={{
-      initialFocus: false, // Disable automatic focus 
-      onActivate: () => {
-        // This runs after the trap is active
-        if (closeBtnRef.current) {
-          closeBtnRef.current.focus();
+        initialFocus: false,
+        onActivate: () => {
+          if (closeBtnRef.current) {
+            closeBtnRef.current.focus();
+          }
         }
-      }
-    }}
+      }}
     >
       <div
         className="fixed inset-0 flex items-center justify-center z-50"
@@ -39,8 +38,8 @@ const PrivacyPolicy = ({ onClose, isOpen }: PrivacyPolicyProps) => {
     
         <div className="max-w-lg w-full p-8 rounded shadow-lg bg-white text-neutral-900 relative">
           <CloseButton
+            ref={closeBtnRef}
             onClick={onClose}
-            buttonRef={closeBtnRef}
             className="absolute top-4 right-4 text-neutral-700 hover:text-neutral-900 text-lg font-bold"
           />
 
