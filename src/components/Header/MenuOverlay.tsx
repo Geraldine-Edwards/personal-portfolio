@@ -13,18 +13,27 @@ type MenuOverlayProps = {
 };
 
 const MenuOverlay = ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
+  // Create a button reference
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
-  // Only active when the modal is open
+  // Ensure Esc key can close the overlay only once it is active
   useEscapeKey(onClose, isOpen);
   useFocusOnOpen(closeBtnRef, isOpen);
 
   if(!isOpen) return null;
 
   return (
-   
-    <FocusTrap>
-      {/* Keep the keyboard user inside the overlay until it is closed */}
+    // Keep the keyboard user inside the overlay until it is closed using Focus Trap 
+    <FocusTrap
+      focusTrapOptions={{
+        initialFocus: false,
+        onActivate: () => {
+          if (closeBtnRef.current) {
+            closeBtnRef.current.focus();
+          }
+        }
+      }}
+    >
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
 
       <CloseButton
