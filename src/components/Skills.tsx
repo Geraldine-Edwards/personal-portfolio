@@ -109,7 +109,7 @@ const Skills = () => (
       ))}
     </div>
 
-    {/* Soft Skills Section */}
+
     <SectionHeading>
       Soft Skills
     </SectionHeading>
