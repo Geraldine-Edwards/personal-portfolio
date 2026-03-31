@@ -3,6 +3,7 @@ import SectionHeading from "./ui/SectionHeading";
 import SectionDivider from "./ui/SectionDivider";
 
 type Project = {
+  id: string
   title: string
   description: string
   image: string
@@ -13,6 +14,7 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: "boost-dev",
     title: "Boost.dev",
     description: "Built during a team hackathon, Boost.dev is a developer dashboard with confidence-building mini challenges, motivating resources and an encouraging community.",
     image: "/personal-portfolio/boost-dev.webp",
@@ -20,6 +22,7 @@ const projects: Project[] = [
     live: "https://ge-boost-dev.hosting.codeyourfuture.io/",
   },
   {
+    id: "reeltalk",
     title: "REELtalk",
     description: "A movie-centric platform that combines discovering new films with the  experience of a community forum.",
     image: "/personal-portfolio/reeltalk.webp",
@@ -27,6 +30,7 @@ const projects: Project[] = [
     live: "https://reel-talk-app-9059e75acb3d.herokuapp.com/",
   },
    {
+    id: "chatterbox",
     title: "Chatterbox",
     description: "A minimal proof-of-concept, real-time chat application enabling instant messaging between users, featuring both long-polling and websocket technology for seamless communication.",
     image: "/personal-portfolio/chatterbox.webp",
@@ -34,6 +38,7 @@ const projects: Project[] = [
     live: "https://geraldine-edwards-chat-app-websockets-frontend.hosting.codeyourfuture.io/",
   },
   {
+    id: "giftpal",
     title: "Gift Pal",
     description: "A gift wishlist app with event planning and friends integration.",
     image: "/personal-portfolio/giftpal.webp",
@@ -41,6 +46,7 @@ const projects: Project[] = [
     live: "https://gift-pal-91413d2174b0.herokuapp.com/",
   },
   {
+    id: "bright-futures",
     title: "Bright Futures",
     description: "A mock website supporting parents and educators in fostering empathy, inclusion, and belonging for young people.",
     image: "/personal-portfolio/bright-futures.webp",
@@ -66,7 +72,7 @@ const Work = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-16">
         {projects.map((project, i) => (
           <motion.div
-            key={i}
+            key={project.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.05 }}
