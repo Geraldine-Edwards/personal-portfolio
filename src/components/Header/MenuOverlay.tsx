@@ -1,39 +1,25 @@
 import { motion } from "framer-motion"
-import { useRef, useEffect } from  "react"
+import { useRef } from  "react"
 import { FocusTrap } from "focus-trap-react";
 import CloseButton from "../ui/CloseButton";
-import { FiX } from 'react-icons/fi'
-
+import { FiX } from 'react-icons/fi';
+import useEscapeKey from "../../hooks/UseEscapeKey";
+import useFocusOnOpen from "../../hooks/UseFocusOnOpen";
 
 type MenuOverlayProps = {
-  isOpen: boolean
-  onClose: () => void
-  handleClick: (section: string) => void
-}
+  isOpen: boolean;
+  onClose: () => void;
+  handleClick: (section: string) => void;
+};
 
-const MenuOverlay= ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
+const MenuOverlay = ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (!isOpen) return;
+  // Only active when the modal is open
+  useEscapeKey(onClose, isOpen);
+  useFocusOnOpen(closeBtnRef, isOpen);
 
-    // Focus the close button when the menu opens
-    closeBtnRef.current?.focus()
-
-    const handleEscKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-
-    document.addEventListener("keydown", handleEscKey);
-    return () => {
-      document.removeEventListener("keydown", handleEscKey);
-    };
-  }, [isOpen, onClose]);
-
-
-  // Hide menu form user
-  if (!isOpen) return null;
-  
+  if(!isOpen) return null;
 
   return (
    
@@ -42,8 +28,8 @@ const MenuOverlay= ({ isOpen, onClose, handleClick }: MenuOverlayProps) => {
     <div className="fixed inset-0 bg-white z-50 flex flex-col justify-center px-10 md:px-20">
 
       <CloseButton
+        ref={closeBtnRef}
         onClick={onClose}
-        buttonRef={closeBtnRef}
         className="flex items-center gap-2 absolute top-8 right-10 text-lg md:text-xl lg:text-2xl xl:text-3xl font-serif tracking-widest"
       >
         <span>CLOSE</span>

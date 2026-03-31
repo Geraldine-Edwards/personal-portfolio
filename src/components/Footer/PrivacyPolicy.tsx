@@ -1,25 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { FocusTrap } from "focus-trap-react";
 import CloseButton from "../ui/CloseButton";
+import useEscapeKey from "../../hooks/UseEscapeKey";
+import useFocusOnOpen from "../../hooks/UseFocusOnOpen";
 
 type PrivacyPolicyProps = {
   onClose: () => void;
   isOpen: boolean;
 }
 
-const PrivacyPolicy = ({ onClose }: PrivacyPolicyProps) => {
+const PrivacyPolicy = ({ onClose, isOpen }: PrivacyPolicyProps) => {
   {/* Create a button reference */}
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   {/* Ensure Esc key can close the modal */}
-  useEffect(() => {
-    const handleEscKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    }
-    
-    document.addEventListener("keydown", handleEscKey);
-      return () => document.removeEventListener("keydown", handleEscKey);
-    }, [onClose]);
+  useEscapeKey(onClose, isOpen);
+  useFocusOnOpen(closeBtnRef, isOpen)
+
+  if (!isOpen) return null
 
   {/* Keep the keyboard user inside the overlay until it is closed using Focus Trap */}
   return (

@@ -1,19 +1,23 @@
+import React from "react";
+
 type CloseButtonProps = {
   onClick: () => void;
-  buttonRef?: React.RefObject<HTMLButtonElement | null>
   children?: React.ReactNode;
   className?: string;
 };
 
-const CloseButton = ({ onClick, buttonRef, children, className }: CloseButtonProps) => (
-  <button
-    ref={buttonRef}
-    onClick={onClick}
-    className={className}
-    aria-label="Close button"
-  >
-  {children ? children : "×"}
-  </button>
+const CloseButton = React.forwardRef<HTMLButtonElement, CloseButtonProps>(
+  ({ onClick, children, className }, ref) => {
+    return (
+      <button
+        ref={ref}
+        onClick={onClick}
+        className={className}
+        aria-label="Close button"
+      >
+        {children ? children : "×"}
+      </button>
+    );
+  }
 );
-
 export default CloseButton;
