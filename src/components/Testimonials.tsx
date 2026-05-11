@@ -6,19 +6,10 @@ import SectionDivider from "./ui/SectionDivider";
   {/* insert some quotes text */}
 const testimonials = [
   {
-    quote: "Geraldine is dedicated, reliable, and always delivers high-quality work.",
-    name: "Christopher",
-    role: "Wordpress Developer",
-  },
-  {
-    quote: "A pleasure to collaborate with—Geraldine brings creativity and enthusiasm to every project.",
-    name: "Michael",
-    role: "Designer",
-  },
-   {
-    quote: "Her professionalism and attention to detail make her stand out in any team.",
-    name: "Ali",
-    role: "Team Leader",
+    quote: "We met with Geraldine online, talked about what we did and what we thought our issues were, she was very perceptive in understanding what we were trying to do with the resources we had. She had ideas of what resources we could access and signposted us to companies/charities that offered discounts to non-profit organizations, she also identified reputable online IT training courses that we could access. Geraldine was positive and encouraging, she listened to us and helped progress ideas we had. It was a really useful session and we would recommend her to other volunteer organisations who are looking for IT help and solutions.",
+    name: "Rose Davis & Dave Morris",
+    role: "Volunteer Directors - Lucem House Community Cinema",
+    link: "https://www.lucemhouse.co.uk/"
   },
 ]
 
@@ -33,11 +24,11 @@ const Testimonials = () => (
 
     <SectionDivider />
 
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="flex flex-wrap justify-center gap-8">
       {testimonials.map((t, i) => (
         <motion.div
           key={i}
-          className="border border-neutral-300 p-8 flex flex-col items-center text-center"
+          className="border border-neutral-300 p-8 flex flex-col items-center text-center max-w-md w-ful"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: i * 0.1 }}
@@ -47,6 +38,7 @@ const Testimonials = () => (
           <p className="font-sans italic text-lg text-neutral-700 mb-4">{t.quote}</p>
           <div className="mt-4 font-bold text-neutral-900">{t.name}</div>
           <div className="text-sm text-neutral-500">{t.role}</div>
+          <div className="mt-4 font-bold text-neutral-900"><a href={t.link} target="_blank" rel="noopener noreferrer">{t.link}</a></div>
           <FaQuoteRight size={32} className="mt-2 text-neutral-400" aria-hidden="true" />
         </motion.div>
       ))}
