@@ -9,15 +9,10 @@ type CloseButtonProps = {
 const CloseButton = React.forwardRef<HTMLButtonElement, CloseButtonProps>(
   ({ onClick, children, className }, ref) => {
     return (
-      <button
-        ref={ref}
-        onClick={onClick}
-        className={className}
-        aria-label="Close button"
-      >
+      <button type="button" ref={ref} onClick={onClick} className={className}>
         {children ? children : "×"}
       </button>
     );
-  }
+  },
 );
 export default CloseButton;
