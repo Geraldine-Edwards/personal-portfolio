@@ -35,7 +35,7 @@ const projects: Project[] = [
     description: "A minimal proof-of-concept, real-time chat application enabling instant messaging between users, featuring both long-polling and websocket technology for seamless communication.",
     image: "/personal-portfolio/chatterbox.webp",
     github: "https://github.com/Geraldine-Edwards/Chat-Application",
-    live: "https://geraldine-edwards-chat-app-websockets-frontend.hosting.codeyourfuture.io/",
+    live: "https://ge-chat-app-websockets-frontend.trainees.hosting.cyf.academy/",
   },
   {
     id: "giftpal",
