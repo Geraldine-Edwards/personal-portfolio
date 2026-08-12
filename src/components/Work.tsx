@@ -19,7 +19,7 @@ const projects: Project[] = [
     description: "Built during a team hackathon, Boost.dev is a developer dashboard with confidence-building mini challenges, motivating resources and an encouraging community.",
     image: "/personal-portfolio/boost-dev.webp",
     github: "https://github.com/Geraldine-Edwards/boost.dev",
-    live: "https://ge-boost-dev.hosting.codeyourfuture.io/",
+    live: "https://ge-boost-dev.trainees.hosting.cyf.academy",
   },
   {
     id: "reeltalk",
